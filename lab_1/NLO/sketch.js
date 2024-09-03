@@ -38,10 +38,24 @@ let flying_nlo = {
         endShape();
     },
 
+    // chechk cows
+    catch_cows: function(cows) {
+        let beamLeft = this.x - this.width / 4;
+        let beamRight = this.x + this.width / 4;
+
+        for (let i = cows.length - 1; i >= 0; i--) {
+            let cow = cows[i];
+            if (cow.x > beamLeft && cow.x < beamRight && cow.y > this.y) {
+                // delete cow +1 to count
+                cows.splice(i, 1);
+                countCows++;
+            }
+        }
+    }
 };
 
 let cows = [];
-
+let countCows = 0;  // count
 
 function Cow(x, y, direction)
 {
@@ -129,6 +143,8 @@ function draw(){
     flying_nlo.draw_fly();
     flying_nlo.beam();
 
+    // catch cows
+    flying_nlo.catch_cows(cows);
 
     // кпопочки вверх вниз, оставить в верх?
     let moveSpeed = 4;
@@ -141,5 +157,8 @@ function draw(){
     if (keyIsDown(DOWN_ARROW))
         flying_nlo.change_pos(0, moveSpeed);
 
-
+    // count
+    fill(255);
+    textSize(32);
+    text(`Caught Cows: ${countCows}`, 10, 30);
 }
