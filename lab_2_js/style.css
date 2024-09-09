@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    height: 100vh; /* Высота 100% от высоты окна браузера */
+    margin: 0; /* Убираем стандартные отступы */
+    text-align: center; /* Центрируем текст внутри элементов */
+    font-family: Arial, sans-serif;
+}
+
+#greeting {
+    font-size: 120px;
+
+}
+
+#btn-greeting {
+    padding: 40px 200px 40px 200px;
+    border-radius: 100px;
+    border-style: none;
+    font-size: 20px;
+    background-color: black;    
+    color:#ffffff;
+
+}
