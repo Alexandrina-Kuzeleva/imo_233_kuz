@@ -1,6 +1,9 @@
 package imo_233_kuz.lab_1_java;
 
 public class Main {
+
+    // firts half of task 
+    
     public boolean sleepIn(boolean weekday, boolean vacation) {
         return !weekday || vacation;
         //sleepIn
@@ -72,7 +75,45 @@ public class Main {
             return "not " + str;
         }
     }//notString
+
+    public String missingChar(String str, int n) {
+        return str.substring(0, n) + str.substring(n + 1);
+    }//missingChar
+
+    public String frontBack(String str) {
+        if (str.length() <= 1) {
+            return str; 
+        }
+       
+        String middle = str.substring(1, str.length() - 1);
+        return str.charAt(str.length() - 1) + middle + str.charAt(0);
+    }//frontBack
     
+    public String front3(String str) {
+        String front;
+        if (str.length() >= 3) {
+            front = str.substring(0, 3);
+        } else {
+            front = str; 
+        }
+        return front + front + front; 
+    }//front3
+    
+    public String backAround(String str) {
+       
+        char lastChar = str.charAt(str.length() - 1);
+        return lastChar + str + lastChar;
+    }//backAround
+    
+    public boolean or35(int n) {
+        return (n % 3 == 0) || (n % 5 == 0);
+    }//or35
+
+    String front22(String str) {
+        String front = str.length() < 2 ? str : str.substring(0, 2);
+        return front + str + front;
+    }//front22
+  
     public static void main(String[] args) {
   
     }
