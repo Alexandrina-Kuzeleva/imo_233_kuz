@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 
+
 public class LinearCal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,13 +11,18 @@ public class LinearCal {
         int b = scanner.nextInt();
 
         if (a == 0 && b == 0) {
-            System.out.println("INF");
+            System.out.println("INF"); 
         } else if (a == 0) {
-            System.out.println("NO");
+            System.out.println("NO");  
         } else {
-            System.out.println("Решение: " + (-b / (double) a));
+            if (b % a == 0) { 
+                int solution = -b / a;
+                System.out.println("Решение в целых числах: " + solution);
+            } else {
+                System.out.println("Решение не является целым числом: " + (-b / (double) a));
+            }
         }
     }
 }
 
-//task 8
+//task 8 переделан
